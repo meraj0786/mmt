@@ -36,10 +36,10 @@ function App() {
             return (
               <Airline key={index}
                 name={item.Segments[0].Airline?.AirlineName}
-                departure={item.Segments[0].Origin?.DepTime}
+                departure={item.Segments[0].Origin?.DepTime.slice(-8,-3)}
                 distance={item.Segments[0].Duration}
                 stopage={item.Segments[0].StopOver ? 'stop1' : 'Non stop'}
-                arrival={item.Segments[0].Destination?.ArrTime}
+                arrival={item.Segments[0].Destination?.ArrTime.slice(-8,-3)}
                 price={item.Fare?.OfferedFare}
               />
 
